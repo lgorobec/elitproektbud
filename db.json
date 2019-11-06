@@ -1,0 +1,281 @@
+{
+  "home": [
+    {
+      "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur corporis dolor provident repudiandae sapiente, tempora. Aliquam amet, animi aspernatur dolores earum esse, facilis fuga fugiat, hic laboriosam quo vel voluptates?",
+      "ceo_title": "ceoTitle",
+      "ceo_keys": "ceoKeys",
+      "ceo_desc": "ceoDesc"
+    }
+  ],
+  "about": [
+    {
+      "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur corporis dolor provident repudiandae sapiente, tempora. Aliquam amet, animi aspernatur dolores earum esse, facilis fuga fugiat, hic laboriosam quo vel voluptates?",
+      "ceo_title": "ceoTitle",
+      "ceo_keys": "ceoKeys",
+      "ceo_desc": "ceoDesc"
+    }
+  ],
+  "servicespage": [
+    {
+      "ceo_title": "ceoTitle",
+      "ceo_keys": "ceoKeys",
+      "ceo_desc": "ceoDesc"
+    }
+  ],
+  "services": [
+    {
+      "id": 1,
+      "name": "Service1",
+      "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur corporis dolor provident repudiandae sapiente, tempora. Aliquam amet, animi aspernatur dolores earum esse, facilis fuga fugiat, hic laboriosam quo vel voluptates? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur corporis dolor provident repudiandae sapiente, tempora. Aliquam amet, animi aspernatur dolores earum esse, facilis fuga fugiat, hic laboriosam quo vel voluptates?",
+      "img": "slide1.jpg",
+      "icon": "build",
+      "ceo_title": "ceoTitle",
+      "ceo_keys": "ceoKeys",
+      "ceo_desc": "ceoDesc",
+      "ceo_alt": "ceoAlt"
+    },
+    {
+      "id": 2,
+      "name": "Service2",
+      "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur corporis dolor provident repudiandae sapiente, tempora. Aliquam amet, animi aspernatur dolores earum esse, facilis fuga fugiat, hic laboriosam quo vel voluptates?",
+      "img": "slide1.jpg",
+      "icon": "build",
+      "ceo_title": "ceoTitle",
+      "ceo_keys": "ceoKeys",
+      "ceo_desc": "ceoDesc",
+      "ceo_alt": "ceoAlt"
+    },
+    {
+      "id": 3,
+      "name": "Service3",
+      "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur corporis dolor provident repudiandae sapiente, tempora. Aliquam amet, animi aspernatur dolores earum esse, facilis fuga fugiat, hic laboriosam quo vel voluptates?",
+      "img": "slide1.jpg",
+      "icon": "build",
+      "ceo_title": "ceoTitle",
+      "ceo_keys": "ceoKeys",
+      "ceo_desc": "ceoDesc",
+      "ceo_alt": "ceoAlt"
+    },
+    {
+      "id": 4,
+      "name": "Service",
+      "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur corporis dolor provident repudiandae sapiente, tempora. Aliquam amet, animi aspernatur dolores earum esse, facilis fuga fugiat, hic laboriosam quo vel voluptates?",
+      "img": "slide1.jpg",
+      "icon": "build",
+      "ceo_title": "ceoTitle",
+      "ceo_keys": "ceoKeys",
+      "ceo_desc": "ceoDesc",
+      "ceo_alt": "ceoAlt"
+    },
+    {
+      "id": 5,
+      "name": "Service",
+      "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur corporis dolor provident repudiandae sapiente, tempora. Aliquam amet, animi aspernatur dolores earum esse, facilis fuga fugiat, hic laboriosam quo vel voluptates?",
+      "img": "slide1.jpg",
+      "icon": "build",
+      "ceo_title": "ceoTitle",
+      "ceo_keys": "ceoKeys",
+      "ceo_desc": "ceoDesc",
+      "ceo_alt": "ceoAlt"
+    },
+    {
+      "id": 6,
+      "name": "Service",
+      "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur corporis dolor provident repudiandae sapiente, tempora. Aliquam amet, animi aspernatur dolores earum esse, facilis fuga fugiat, hic laboriosam quo vel voluptates?",
+      "img": "slide1.jpg",
+      "icon": "build",
+      "ceo_title": "ceoTitle",
+      "ceo_keys": "ceoKeys",
+      "ceo_desc": "ceoDesc",
+      "ceo_alt": "ceoAlt"
+    },
+    {
+      "id": 7,
+      "name": "Service",
+      "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur corporis dolor provident repudiandae sapiente, tempora. Aliquam amet, animi aspernatur dolores earum esse, facilis fuga fugiat, hic laboriosam quo vel voluptates?",
+      "img": "slide1.jpg",
+      "icon": "build",
+      "ceo_title": "ceoTitle",
+      "ceo_keys": "ceoKeys",
+      "ceo_desc": "ceoDesc",
+      "ceo_alt": "ceoAlt"
+    },
+    {
+      "id": 8,
+      "name": "Service",
+      "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur corporis dolor provident repudiandae sapiente, tempora. Aliquam amet, animi aspernatur dolores earum esse, facilis fuga fugiat, hic laboriosam quo vel voluptates?",
+      "img": "slide1.jpg",
+      "icon": "build",
+      "ceo_title": "ceoTitle",
+      "ceo_keys": "ceoKeys",
+      "ceo_desc": "ceoDesc",
+      "ceo_alt": "ceoAlt"
+    }
+  ],
+  "licences": [
+    {
+      "id": 1,
+      "img": "slide1.jpg",
+      "ceo_title": "ceoTitle",
+      "ceo_keys": "ceoKeys",
+      "ceo_desc": "ceoDesc",
+      "ceo_alt": "ceoAlt"
+    },
+    {
+      "id": 2,
+      "img": "slide2.jpg",
+      "ceo_title": "ceoTitle",
+      "ceo_keys": "ceoKeys",
+      "ceo_desc": "ceoDesc",
+      "ceo_alt": "ceoAlt"
+    }
+  ],
+  "partners": [
+    {
+      "id": 1,
+      "name": "name",
+      "link": "link",
+      "img": "slide2.jpg",
+      "ceo_alt": "ceoAlt"
+    },
+    {
+      "id": 2,
+      "name": "name",
+      "link": "link",
+      "img": "slide2.jpg",
+      "ceo_alt": "ceoAlt"
+    },
+    {
+      "id": 3,
+      "name": "name",
+      "link": "link",
+      "img": "slide2.jpg",
+      "ceo_alt": "ceoAlt"
+    }
+  ],
+  "partnerspage": [
+    {
+      "ceo_title": "ceoTitle",
+      "ceo_keys": "ceoKeys",
+      "ceo_desc": "ceoDesc"
+    }
+  ],
+  "objects": [
+    {
+      "id": 1,
+      "name": "name",
+      "main_img": "slide1.jpg",
+      "images": [
+        "slide1.jpg",
+        "slide2.jpg",
+        "slide1.jpg",
+        "slide2.jpg"
+      ],
+      "ceo_title": "ceoTitle",
+      "ceo_keys": "ceoKeys",
+      "ceo_desc": "ceoDesc",
+      "ceo_alt_main": "ceoAltMain"
+    },
+    {
+      "id": 2,
+      "name": "name",
+      "main_img": "slide2.jpg",
+      "images": [
+        "slide1.jpg",
+        "slide2.jpg",
+        "slide1.jpg",
+        "slide2.jpg"
+      ],
+      "ceo_title": "ceoTitle",
+      "ceo_keys": "ceoKeys",
+      "ceo_desc": "ceoDesc"
+    },
+    {
+      "id": 3,
+      "name": "name",
+      "main_img": "slide1.jpg",
+      "images": [
+        "slide1.jpg",
+        "slide2.jpg",
+        "slide1.jpg",
+        "slide2.jpg"
+      ],
+      "ceo_title": "ceoTitle",
+      "ceo_keys": "ceoKeys",
+      "ceo_desc": "ceoDesc"
+    }
+  ],
+  "objectsPage": [
+    {
+      "ceo_title": "ceoTitle",
+      "ceo_keys": "ceoKeys",
+      "ceo_desc": "ceoDesc"
+    }
+  ],
+  "contacts": [
+    {
+      "adress": "adress",
+      "phone": "phone",
+      "email": "e-mail",
+      "ceo_title": "ceoTitle",
+      "ceo_keys": "ceoKeys",
+      "ceo_desc": "ceoDesc"
+    }
+  ],
+  "requests": [
+    {
+      "id": 1,
+      "name": "name",
+      "phone_number": "07777777777",
+      "question": "question"
+    },
+    {
+      "name": "Лариса",
+      "phoneNumber": "0669834160",
+      "question": "question",
+      "id": 2
+    },
+    {
+      "name": "Лариса",
+      "phoneNumber": "0669834160",
+      "question": "question",
+      "id": 3
+    },
+    {
+      "name": "caca",
+      "phoneNumber": "6678543274",
+      "question": "vavavsw",
+      "id": 4
+    }
+  ],
+  "slides": [
+    {
+      "id": 1,
+      "img": "slide1.jpg"
+    },
+    {
+      "id": 2,
+      "img": "slide2.jpg"
+    }
+  ],
+  "clients": [
+    {
+      "id": 1,
+      "img": "slide1.jpg",
+      "link": "link",
+      "ceo_title": "ceoTitle"
+    },
+    {
+      "id": 2,
+      "img": "slide1.jpg",
+      "link": "link",
+      "ceo_title": "ceoTitle"
+    },
+    {
+      "id": 3,
+      "img": "slide1.jpg",
+      "link": "link",
+      "ceo_alt": "ceoAlt"
+    }
+  ]
+}

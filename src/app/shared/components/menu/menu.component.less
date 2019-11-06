@@ -1,0 +1,203 @@
+@import "../../../../assets/styles/_media";
+
+.menu {
+  padding: 20px 50px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
+  background: #fff;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 20;
+  background: #fff;
+  border-bottom: 1px solid #ccc;
+
+  @media @tablet-max-width {
+    display: none;
+  }
+
+  &__logo-link {
+    display: block;
+  }
+
+  &__list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__item {
+    min-width: 50px;
+    margin: 0 15px;
+  }
+
+  &__link {
+    color: #484848;
+    background: transparent;
+    display: block;
+    position: relative;
+
+    &:before {
+      content: '';
+      position: absolute;
+      display: block;
+      width: 100%;
+      height: 6px;
+      background-color: #1d6887;
+      top: -41px;
+      left: 0;
+      opacity: 0;
+      transition: all ease .55s;
+    }
+
+    &:hover {
+      text-decoration: none;
+
+      &:before {
+        opacity: 1;
+      }
+    }
+
+    &_active {
+
+      &:before {
+        opacity: 1;
+      }
+    }
+  }
+
+  &__lang {
+    width: 50px;
+
+    &-img {
+      max-height: calc(~'100% - 10px');
+      max-width: 100%;
+      padding: 5px 0;
+
+      &-ru {
+        background: url('../../../../assets/img/russia.png') center no-repeat;
+        background-size: contain;
+        height: 100%;
+        display: block;
+      }
+
+      &-ua {
+        background: url('../../../../assets/img/ukraine.png') center no-repeat;
+        background-size: contain;
+        height: 100%;
+        display: block;
+      }
+
+      &-en {
+        background: url('../../../../assets/img/united-kingdom.png') center no-repeat;
+        background-size: contain;
+        height: 100%;
+        display: block;
+      }
+    }
+
+    &_phone {
+      @media @tablet-max-width {
+        display: none;
+      }
+
+      @media @phone-max-width {
+        margin: 10px auto;
+        display: block;
+      }
+    }
+
+    &_tablet {
+      @media @tablet-max-width {
+        display: block;
+      }
+
+      @media @phone-max-width {
+        display: none;
+      }
+    }
+
+    &-icon {
+      &-ru {
+        background: url('../../../../assets/img/russia.png') center no-repeat;
+        background-size: contain;
+        height: 100%;
+        display: block;
+      }
+
+      &-ua {
+        background: url('../../../../assets/img/ukraine.png') center no-repeat;
+        background-size: contain;
+        height: 100%;
+        display: block;
+      }
+
+      &-en {
+        background: url('../../../../assets/img/united-kingdom.png') center no-repeat;
+        background-size: contain;
+        height: 100%;
+        display: block;
+      }
+    }
+  }
+
+  &-phone {
+    display: none;
+    width: 100%;
+    height: 100px;
+    position: fixed;
+    top: 0;
+    z-index: 20;
+
+    @media @tablet-max-width {
+      display: block;
+    }
+
+    &__content {
+      display: flex;
+      justify-content: space-between;
+      padding: 20px;
+      background: #fff;
+      border-bottom: 1px solid #ccc;
+    }
+
+    &__icon {
+      font-size: 50px;
+      cursor: pointer;
+    }
+
+    &__sidenav {
+      height: 100%;
+      position: fixed;
+      padding: 20px;
+    }
+
+    &__list {
+      text-align: center;
+    }
+
+    &__item {
+      margin: 15px;
+    }
+
+    &__link {
+      color: #484848;
+      background: transparent;
+      display: block;
+      position: relative;
+      font-size: 20px;
+
+      &:hover {
+        text-decoration: none;
+      }
+
+      &_active {
+        border-bottom: 3px solid #1d6887;
+      }
+    }
+  }
+}
+

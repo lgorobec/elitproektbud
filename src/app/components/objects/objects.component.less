@@ -1,0 +1,73 @@
+@import "../../../assets/styles/_media";
+
+.objects {
+  padding: 60px 0;
+  text-align: center;
+  background: url('../../../assets/img/bg_body.png');
+
+  &__i {
+    width: 80%;
+    margin: 0 auto;
+
+    @media @tablet-max-width {
+    width: 100%;
+    padding: 0 20px;
+  }
+  }
+
+  &__title {
+    margin-top: 100px;
+    margin-bottom: 0;
+    font-weight: 500;
+    color: #484848;
+    text-transform: uppercase;
+    font-size: 30px;
+    line-height: 1.5;
+  }
+
+  &__hr {
+    width: 32px;
+    height: 8px;
+    background: #1d6887;
+  }
+
+  &__list {
+    flex-flow: row wrap;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  &__item {
+    width: 370px;
+    margin: 10px;
+    border: 1px solid transparent;
+  }
+
+  &__link {
+    text-decoration: none;
+    color: #3b4047;
+    display: flex;
+    align-items: center;
+    flex-flow: row wrap;
+    background: #fff;
+    height: 100%;
+    box-shadow: 0px 0px 5px 0px rgba(50, 50, 50, 0.75);
+    transition: all .3s;
+
+    &:hover {
+      transform: scale(1.05, 1.05);
+    }
+  }
+
+  &__img {
+    max-width: 100%;
+    max-height: 300px;
+  }
+
+  &__name {
+    text-align: center;
+    width: 100%;
+    font-size: 22px;
+  }
+}

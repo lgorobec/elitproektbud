@@ -1,0 +1,16 @@
+<div class="partners" id="Partners">
+  <div class="partners__i">
+    <h3 class="partners__title">{{ "partners__title" | translate }}</h3>
+    <hr class="partners__hr">
+    <div class="partners__list">
+      <div class="partners__item" *ngFor="let part of partners">
+        <a href="{{ part.link }}" class="partners__link">
+          <img [src]="'../../assets/img/' + part.img" alt="{{ part.ceo_alt_main }}" class="partners__img">
+          <p class="partners__name">{{ part.name }}</p>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+<app-services-list></app-services-list>
+<app-clients></app-clients>

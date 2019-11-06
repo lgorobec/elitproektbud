@@ -1,0 +1,128 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css"; // your theme
+
+.mat-sidenav-container, .mat-sidenav-content, .mat-tab-body-content {
+  transform: none !important;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  margin: 0;
+  //min-width: 1170px;
+  background: #dcdcdc;
+}
+
+a {
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+.mat-option-text {
+  display: block;
+  width: 100%;
+  height: calc(~'100% - 10px');
+  padding: 5px 0;
+  text-align: center;
+}
+
+.mat-select-value-text {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.carousel {
+  &-inner {
+    height: 100%;
+  }
+
+  &-item {
+    height: 100%;
+  }
+
+  &-indicators li {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    background: #1d6887;
+    opacity: 1;
+
+    &.active {
+      width: 10px;
+      height: 10px;
+      border: 4px solid #fff;
+    }
+  }
+}
+
+
+.owl-nav {
+  position: absolute;
+  width: 100%;height: 1px;
+}
+
+.owl-prev {
+  position: relative;
+  left: -50%;
+  top: -150px;
+  cursor: pointer;
+
+  &:hover {
+    border: none !important;
+    background: none !important;
+    outline: none !important;
+  }
+
+  &:focus {
+    outline: none !important;
+  }
+
+  span {
+    font-size: 50px;
+    color: #000000;
+  }
+}
+
+.owl-next {
+  position: relative;
+  right: -50%;
+  top: -150px;
+  cursor: pointer;
+
+  &:hover {
+    border: none !important;
+    background: none !important;
+    outline: none !important;
+  }
+
+  &:focus {
+    outline: none !important;
+  }
+
+  span {
+    font-size: 50px;
+    color: #000000;
+  }
+}
+
+.owl-stage-outer {
+  min-height: 170px;
+}
+
+ngx-gallery-preview.ngx-gallery-active {
+  margin-top: 100px !important;
+  height: calc(~'100% - 100px') !important;
+}

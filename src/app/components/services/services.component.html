@@ -1,0 +1,19 @@
+<div class="services" id="serv">
+  <div class="services__i">
+    <p class="services__title">{{ 'services_title' | translate }}</p>
+    <hr class="services__hr">
+    <div class="services__list">
+      <div class="services__item" *ngFor="let ser of services">
+        <a [routerLink]="'/service/' + ser.id" class="services__link">
+          <div class="services__desc">
+            <img [src]="'/../../../assets/img/' + ser.img" alt="{{ ser.ceo_alt }}" class="services__img">
+            <div class="services__description">
+              <h5 class="services__name">{{ ser.name }}</h5>
+              <!--<p class="services__text">{{ ser.text }}</p>-->
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

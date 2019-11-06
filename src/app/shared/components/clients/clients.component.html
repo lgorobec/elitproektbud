@@ -1,0 +1,13 @@
+<div class="clients">
+  <div class="clients__i">
+    <p class="clients__title">{{ 'clients_title' | translate }}</p>
+    <hr class="clients__hr">
+    <div class="clients__list">
+      <div class="clients__item" *ngFor="let client of clients">
+        <a href="{{ client.link }}" target="_blank" class="clients__link">
+          <img [src]="'../../../assets/img/' + client.img" alt="{{  client.ceo_alt }}" class="clients__img">
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

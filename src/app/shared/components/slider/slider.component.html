@@ -1,0 +1,34 @@
+<div class="slider">
+  <div class="slider__i">
+    <ngb-carousel
+      [showNavigationArrows]="false"
+      [showNavigationIndicators]="true"
+      interval="10000"
+      class="slider-carousel">
+      <ng-template ngbSlide class="slider-carousel__template" *ngFor="let slide of slides">
+        <div class="picsum-img-wrapper slider-carousel__slide">
+          <div [ngStyle]="{'background': 'url(../../../../assets/img/' + slide.img + ') center no-repeat',
+          'background-size': 'cover'}" class="slider-carousel__img">
+          </div>
+        </div>
+      </ng-template>
+    </ngb-carousel>
+    <div class="slider-carousel__caption">
+      <p class="slider-carousel__text">
+        {{ 'slider_text' | translate }}
+      </p>
+      <form class="slider-carousel__form" (ngSubmit)="submitForm()" [formGroup]="form">
+        <h6 class="slider-carousel__title">{{ 'request.text' | translate }}</h6>
+        <div class="slider-carousel__group">
+          <input type="text" class="slider-carousel__input" placeholder="{{ 'request.name' | translate }}" formControlName="name" [ngModel]="name">
+          <input prefix="+38 " mask="(000) 000 00 00" type="text" class="slider-carousel__input" placeholder="{{ 'request.phone' | translate }}" formControlName="phone" [ngModel]="phone">
+          <textarea class="slider-carousel__textarea" placeholder="{{ 'request.question' | translate }}" formControlName="question" [ngModel]="question"></textarea>
+          <button *ngIf="form.status === 'VALID'" type="submit" class="slider-carousel__button slider-caroudel__button_active">Отправить</button>
+          <button *ngIf="form.status != 'VALID'" disabled class="slider-carousel__button">{{ 'request.button' | translate }}</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<app-services-list></app-services-list>
+<app-clients></app-clients>

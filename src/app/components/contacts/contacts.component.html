@@ -1,0 +1,25 @@
+<div class="contacts" id="Contacts">
+  <div class="contacts__i">
+    <h3 class="contacts__title">{{ "contacts.title" | translate }}</h3>
+    <hr class="contacts__hr">
+    <div class="contacts__desc">
+      <div class="contacts__map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d325518.68776786793!2d30.25251409688048!3d50.4016990539146!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4cf4ee15a4505%3A0x764931d2170146fe!2z0JrQuNC10LIsINCj0LrRgNCw0LjQvdCwLCAwMjAwMA!5e0!3m2!1sru!2sru!4v1571950368962!5m2!1sru!2sru" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+      </div>
+      <div class="contacts__inner">
+        <div class="contacts__group">
+          <h5 class="contacts__name">{{ "contacts.adress" | translate }}</h5>
+          <p class="contacts__text">{{ contacts.adress }}</p>
+        </div>
+        <div class="contacts__group">
+          <h5 class="contacts__name">{{ "contacts.phone" | translate }}</h5>
+          <p class="contacts__text">{{ contacts.phone }}</p>
+        </div>
+        <div class="contacts__group contacts__group_last">
+          <h5 class="contacts__name">{{ "contacts.email" | translate }}</h5>
+          <a href="mailto:{{ contacts.email }}" target="_blank" class="contacts__link">{{ contacts.email }}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

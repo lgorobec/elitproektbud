@@ -1,0 +1,99 @@
+<div class="menu">
+    <div class="menu__logo">
+      <a [routerLink]="'home'" class="menu__logo-link">
+        <img src="../../../../assets/img/logo.png" alt="logo" class="menu__logo-img">
+      </a>
+    </div>
+    <div class="menu__i">
+      <ul class="menu__list">
+        <li class="menu__item">
+          <a [routerLink]="'home'" routerLinkActive="menu__link_active" class="menu__link">{{ 'menu.home' | translate }}</a>
+        </li>
+        <li class="menu__item">
+          <a [routerLink]="'about-us'" routerLinkActive="menu__link_active" class="menu__link">{{ 'menu.about' | translate }}</a>
+        </li>
+        <li class="menu__item">
+          <a [routerLink]="'services'" routerLinkActive="menu__link_active" class="menu__link">{{ 'menu.services' | translate }}</a>
+        </li>
+        <li class="menu__item">
+          <a [routerLink]="'lisences'" routerLinkActive="menu__link_active" class="menu__link">{{ 'menu.licences' | translate }}</a>
+        </li>
+        <li class="menu__item">
+          <a [routerLink]="'partners'" routerLinkActive="menu__link_active" class="menu__link">{{ 'menu.partners' | translate }}</a>
+        </li>
+        <li class="menu__item">
+          <a [routerLink]="'objects'" routerLinkActive="menu__link_active" class="menu__link">{{ 'menu.objects' | translate }}</a>
+        </li>
+        <li class="menu__item">
+          <a [routerLink]="'contacts'" routerLinkActive="menu__link_active" class="menu__link">{{ 'menu.contacts' | translate }}</a>
+        </li>
+      </ul>
+    </div>
+    <mat-form-field class="menu__lang">
+      <mat-select name="lang" class="menu__select" [(value)]="selectedLanguage" (valueChange)="changeLanguage()">
+        <mat-select-trigger>
+          <span class="menu__lang-icon menu__lang-icon-{{ selectedLanguage | lowercase}}"> </span>
+        </mat-select-trigger>
+        <mat-option *ngFor="let lang of languages" [value]="lang" class="menu__option">
+          <span class="menu__lang-img menu__lang-img-{{lang | lowercase}}"></span>
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+</div>
+<mat-sidenav-container class="example-container menu-phone">
+  <mat-sidenav #sidenav mode="side" [(opened)]="opened" class="menu-phone__sidenav">
+    <div class="menu-phone__logo">
+      <a [routerLink]="'home'" class="menu__logo-link">
+        <img src="../../../../assets/img/logo.png" alt="logo" class="menu__logo-img">
+      </a>
+    </div>
+    <div class="menu-phone__i">
+      <ul class="menu-phone__list">
+        <li class="menu-phone__item">
+          <a [routerLink]="'home'" (click)="sidenav.toggle()" routerLinkActive="menu-phone__link_active" class="menu-phone__link">{{ 'menu.home' | translate }}</a>
+        </li>
+        <li class="menu-phone__item">
+          <a [routerLink]="'about-us'" (click)="sidenav.toggle()" routerLinkActive="menu-phone__link_active" class="menu-phone__link">{{ 'menu.about' | translate }}</a>
+        </li>
+        <li class="menu-phone__item">
+          <a [routerLink]="'services'" (click)="sidenav.toggle()" routerLinkActive="menu-phone__link_active" class="menu-phone__link">{{ 'menu.services' | translate }}</a>
+        </li>
+        <li class="menu-phone__item">
+          <a [routerLink]="'lisences'" (click)="sidenav.toggle()" routerLinkActive="menu-phone__link_active" class="menu-phone__link">{{ 'menu.licences' | translate }}</a>
+        </li>
+        <li class="menu-phone__item">
+          <a [routerLink]="'partners'" (click)="sidenav.toggle()" routerLinkActive="menu-phone__link_active" class="menu-phone__link">{{ 'menu.partners' | translate }}</a>
+        </li>
+        <li class="menu-phone__item">
+          <a [routerLink]="'objects'" (click)="sidenav.toggle()" routerLinkActive="menu-phone__link_active" class="menu-phone__link">{{ 'menu.objects' | translate }}</a>
+        </li>
+        <li class="menu-phone__item">
+          <a [routerLink]="'contacts'" (click)="sidenav.toggle()" routerLinkActive="menu-phone__link_active" class="menu-phone__link">{{ 'menu.contacts' | translate }}</a>
+        </li>
+      </ul>
+      <mat-form-field class="menu__lang menu__lang_phone">
+        <mat-select name="lang" class="menu__select" [(value)]="selectedLanguage" (valueChange)="changeLanguage()">
+          <mat-select-trigger>
+            <span class="menu__lang-icon menu__lang-icon-{{ selectedLanguage | lowercase}}"> </span>
+          </mat-select-trigger>
+          <mat-option *ngFor="let lang of languages" [value]="lang" class="menu__option">
+            <span class="menu__lang-img menu__lang-img-{{lang | lowercase}}"></span>
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </mat-sidenav>
+  <mat-sidenav-content class="menu-phone__content">
+    <p><i (click)="sidenav.toggle()" class="material-icons menu-phone__icon">menu</i></p>
+    <mat-form-field class="menu__lang menu__lang_tablet">
+      <mat-select name="lang" class="menu__select" [(value)]="selectedLanguage" (valueChange)="changeLanguage()">
+        <mat-select-trigger>
+          <span class="menu__lang-icon menu__lang-icon-{{ selectedLanguage | lowercase}}"> </span>
+        </mat-select-trigger>
+        <mat-option *ngFor="let lang of languages" [value]="lang" class="menu__option">
+          <span class="menu__lang-img menu__lang-img-{{lang | lowercase}}"></span>
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </mat-sidenav-content>
+</mat-sidenav-container>

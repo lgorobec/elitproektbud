@@ -1,0 +1,15 @@
+<div class="objects" id="Objects">
+  <div class="objects__i">
+    <h3 class="objects__title">{{ "objects__title" | translate }}</h3>
+    <hr class="objects__hr">
+    <div class="objects__list">
+      <div class="objects__item" *ngFor="let obj of objects, let x = index">
+        <a [routerLink]="'/object/' + obj.id" class="objects__link">
+          <img style="float: left" [src]="'../../assets/img/' + obj.main_img" alt="{{ obj.ceo_alt_main }}" class="objects__img">
+          <h5 class="objects__name">{{ obj.name }}</h5>
+          <div style="clear: both;"></div>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
