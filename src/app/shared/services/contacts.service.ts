@@ -12,6 +12,7 @@ export class ContactsService extends BaseApi {
   }
 
   getContacts(): Observable <Contact> {
-    return this.get('contacts');
+    return this.get('contacts')
+        .map((con: Contact[]) => con[0] ? con[0] : undefined);
   }
 }

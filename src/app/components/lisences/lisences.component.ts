@@ -21,8 +21,8 @@ export class LisencesComponent implements OnInit {
   ngOnInit() {
     this.triggerScrollTo();
     this.licenceService.getLicences().subscribe((data: Licence[]) => {
-      if (data) {
-        this.licences = data;
+      if (data[0]) {
+        this.licences = data.splice(0, 1);
         this.getGalleryOptions();
       }
     });

@@ -4,7 +4,8 @@ import {Observable} from 'rxjs';
 
 @Injectable()
 export class BaseApi {
-  private baseUrl = 'http://localhost:3330/';
+  // private baseUrl = 'http://localhost:3330/';
+  private baseUrl = 'http://building.loc/api/';
   // private token = document.querySelector('meta[name=csrf-token]').getAttribute('content');
 
   constructor(public http: HttpClient) {}
@@ -30,10 +31,6 @@ export class BaseApi {
   public delete(url: string = ''): Observable<any> {
     return this.http.delete(this.getUrl(url));
     // return this.http.delete(this.getUrl(url), this.getToken());
-  }
-
-  public getPic(url: string = ''): Observable<any> {
-    return this.http.get(url);
   }
 
   // private getToken() {

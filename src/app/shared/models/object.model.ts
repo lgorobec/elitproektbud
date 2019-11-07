@@ -1,4 +1,4 @@
-export class Object {
+export class Obj {
   constructor(
     public main_img: string,
     public name: string,

@@ -3,6 +3,7 @@ import {ScrollToConfigOptions, ScrollToService} from '@nicky-lenaers/ngx-scroll-
 import {Meta, Title} from '@angular/platform-browser';
 import {ContactsService} from '../../shared/services/contacts.service';
 import {Contact} from '../../shared/models/contacts.model';
+import {LanguageService} from '../../shared/services/language.service';
 
 @Component({
   selector: 'app-contacts',
@@ -16,18 +17,14 @@ export class ContactsComponent implements OnInit {
   constructor(public meta: Meta,
               public titleService: Title,
               public scrollToService: ScrollToService,
-              public contactsService: ContactsService) { }
+              public contactsService: ContactsService,
+              public languageServices: LanguageService) { }
 
   ngOnInit() {
     this.triggerScrollTo();
-    this.contactsService.getContacts().subscribe((data: Contact) => {
-      if (data) {
-        this.contacts = data[0];
-        this.titleService.setTitle(this.contacts.ceo_title);
-        this.meta.addTags([
-          {name: 'description', content: this.contacts.ceo_desc},
-          {name: 'keywords', content: this.contacts.ceo_keys}]);
-      }
+    this.reloadData();
+    this.languageServices.selectLang.subscribe((lang) => {
+      this.reloadData();
     });
   }
 
@@ -36,5 +33,17 @@ export class ContactsComponent implements OnInit {
       target: 'Contacts'
     };
     this.scrollToService.scrollTo(config);
+  }
+
+  public reloadData() {
+      this.contactsService.getContacts().subscribe((data: Contact) => {
+          if (data) {
+              this.contacts = data;
+              this.titleService.setTitle(this.contacts.ceo_title);
+              this.meta.addTags([
+                  {name: 'description', content: this.contacts.ceo_desc},
+                  {name: 'keywords', content: this.contacts.ceo_keys}]);
+          }
+      });
   }
 }

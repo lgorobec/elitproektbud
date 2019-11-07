@@ -11,7 +11,8 @@ export class AboutService extends BaseApi {
     super(http);
   }
 
-  getAbout(): Observable <About[]> {
-    return this.get('about');
+  getAbout(): Observable <About> {
+    return this.get('about')
+        .map((about: About[]) => about[0] ? about[0] : undefined);
   }
 }

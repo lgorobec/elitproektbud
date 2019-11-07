@@ -3,6 +3,7 @@ import {AboutService} from '../../shared/services/about.service';
 import {Meta, Title} from '@angular/platform-browser';
 import {About} from '../../shared/models/about.model';
 import {ScrollToConfigOptions, ScrollToService} from '@nicky-lenaers/ngx-scroll-to';
+import {LanguageService} from '../../shared/services/language.service';
 
 @Component({
   selector: 'app-about-company',
@@ -16,16 +17,14 @@ export class AboutCompanyComponent implements OnInit {
   constructor(public aboutService: AboutService,
               public meta: Meta,
               public titleService: Title,
-              public scrollToService: ScrollToService) { }
+              public scrollToService: ScrollToService,
+              public languageService: LanguageService) { }
 
   ngOnInit() {
     this.triggerScrollTo();
-    this.aboutService.getAbout().subscribe((data: About []) => {
-      this.about = data[0];
-      this.titleService.setTitle(this.about.ceo_title);
-      this.meta.addTags([
-        {name: 'description', content: this.about.ceo_desc},
-        {name: 'keywords', content: this.about.ceo_keys}]);
+    this.reloadData();
+    this.languageService.selectLang.subscribe((lang) => {
+        this.reloadData();
     });
   }
 
@@ -34,5 +33,15 @@ export class AboutCompanyComponent implements OnInit {
       target: 'aboutCompany'
     };
     this.scrollToService.scrollTo(config);
+  }
+
+  public reloadData() {
+      this.aboutService.getAbout().subscribe((data: About) => {
+          this.about = data;
+          this.titleService.setTitle(this.about.ceo_title);
+          this.meta.addTags([
+              {name: 'description', content: this.about.ceo_desc},
+              {name: 'keywords', content: this.about.ceo_keys}]);
+      });
   }
 }

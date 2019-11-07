@@ -5,7 +5,7 @@
     <div class="clients__list">
       <div class="clients__item" *ngFor="let client of clients">
         <a href="{{ client.link }}" target="_blank" class="clients__link">
-          <img [src]="'../../../assets/img/' + client.img" alt="{{  client.ceo_alt }}" class="clients__img">
+          <img [src]="client.img" alt="{{  client.ceo_alt }}" class="clients__img">
         </a>
       </div>
     </div>

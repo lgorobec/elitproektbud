@@ -17,6 +17,7 @@ export class PartnerService extends BaseApi {
   }
 
   getPartnersPage(): Observable <Partnerpage> {
-    return this.get('partnerspage');
+    return this.get('partnerspage')
+        .map((partner: Partnerpage[]) => partner[0] ? partner[0] : undefined);
   }
 }

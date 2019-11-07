@@ -4,6 +4,7 @@ import {Partner} from '../../shared/models/partner.model';
 import {Partnerpage} from '../../shared/models/partnerpage.model';
 import {ScrollToConfigOptions, ScrollToService} from '@nicky-lenaers/ngx-scroll-to';
 import {Meta, Title} from '@angular/platform-browser';
+import {LanguageService} from '../../shared/services/language.service';
 
 @Component({
   selector: 'app-partners',
@@ -18,23 +19,14 @@ export class PartnersComponent implements OnInit {
   constructor(public partnersService: PartnerService,
               public meta: Meta,
               public titleService: Title,
-              public scrollToService: ScrollToService) { }
+              public scrollToService: ScrollToService,
+              public languageService: LanguageService) { }
 
   ngOnInit() {
     this.triggerScrollTo();
-    this.partnersService.getPartners().subscribe((data: Partner[]) => {
-      if (data) {
-        this.partners = data;
-      }
-    });
-    this.partnersService.getPartnersPage().subscribe((data: Partnerpage) => {
-      if (data) {
-        this.pageCeo = data[0];
-        this.titleService.setTitle(this.pageCeo.ceo_title);
-        this.meta.addTags([
-          {name: 'description', content: this.pageCeo.ceo_desc},
-          {name: 'keywords', content: this.pageCeo.ceo_keys}]);
-      }
+    this.reloadData();
+    this.languageService.selectLang.subscribe((lang) => {
+        this.reloadData();
     });
   }
 
@@ -43,5 +35,22 @@ export class PartnersComponent implements OnInit {
       target: 'Partners'
     };
     this.scrollToService.scrollTo(config);
+  }
+
+  public reloadData() {
+      this.partnersService.getPartners().subscribe((data: Partner[]) => {
+          if (data) {
+              this.partners = data;
+          }
+      });
+      this.partnersService.getPartnersPage().subscribe((data: Partnerpage) => {
+          if (data) {
+              this.pageCeo = data;
+              this.titleService.setTitle(this.pageCeo.ceo_title);
+              this.meta.addTags([
+                  {name: 'description', content: this.pageCeo.ceo_desc},
+                  {name: 'keywords', content: this.pageCeo.ceo_keys}]);
+          }
+      });
   }
 }

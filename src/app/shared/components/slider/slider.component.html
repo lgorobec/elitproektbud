@@ -7,7 +7,7 @@
       class="slider-carousel">
       <ng-template ngbSlide class="slider-carousel__template" *ngFor="let slide of slides">
         <div class="picsum-img-wrapper slider-carousel__slide">
-          <div [ngStyle]="{'background': 'url(../../../../assets/img/' + slide.img + ') center no-repeat',
+          <div [ngStyle]="{'background': 'url(' + slide.img + ') center no-repeat',
           'background-size': 'cover'}" class="slider-carousel__img">
           </div>
         </div>

@@ -11,7 +11,8 @@ export class ClientService extends BaseApi {
     super(http);
   }
 
-  getClients(): Observable <Client[]> {
-    return this.get('clients');
+  getClients(): Observable <Client> {
+    return this.get('clients')
+        .map((client: Client[]) => client[0] ? client[0] : undefined);
   }
 }

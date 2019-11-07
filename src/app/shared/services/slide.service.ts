@@ -11,7 +11,8 @@ export class SlideService extends BaseApi {
     super(http);
   }
 
-  getSlides(): Observable <Slide[]> {
-    return this.get('slides');
+  getSlides(): Observable <Slide> {
+    return this.get('slides')
+        .map((slide: Slide[]) => slide[0] ? slide[0] : undefined);
   }
 }

@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import {Service} from '../../shared/models/service.model';
 import {ActivatedRoute} from '@angular/router';
 import {ScrollToConfigOptions, ScrollToService} from '@nicky-lenaers/ngx-scroll-to';
 import {Meta, Title} from '@angular/platform-browser';
 import {ObjectService} from '../../shared/services/object.service';
-import {Object} from '../../shared/models/object.model';
+import {Obj} from '../../shared/models/object.model';
 import {NgxGalleryAnimation, NgxGalleryImage, NgxGalleryOptions} from 'ngx-gallery';
+import {LanguageService} from '../../shared/services/language.service';
 
 @Component({
   selector: 'app-object',
@@ -17,28 +17,23 @@ export class ObjectComponent implements OnInit {
   galleryOptions: NgxGalleryOptions[];
   id: number;
   galleryImages: NgxGalleryImage[];
-  object = new Object('', '', [], '', '', '', '');
+  object = new Obj('', '', [], '', '', '', '');
 
   constructor(public activatedRoute: ActivatedRoute,
               public objectService: ObjectService,
               public meta: Meta,
               public titleService: Title,
-              public scrollToService: ScrollToService) { }
+              public scrollToService: ScrollToService,
+              public languageService: LanguageService) { }
 
   ngOnInit() {
     this.triggerScrollTo();
     this.activatedRoute.paramMap.subscribe(params => {
       this.id = parseInt(params.get('id'), 10);
-      this.objectService.getObjectById(this.id).subscribe((data: Object) => {
-        if (data) {
-          this.object = data[0];
-          this.titleService.setTitle(this.object.ceo_title);
-          this.meta.addTags([
-            {name: 'description', content: this.object.ceo_desc},
-            {name: 'keywords', content: this.object.ceo_keys}]);
-          this.getGalleryOptions();
-        }
-      });
+      this.reloadData();
+    });
+    this.languageService.selectLang.subscribe((lang) => {
+      this.reloadData();
     });
   }
 
@@ -79,5 +74,18 @@ export class ObjectComponent implements OnInit {
         big: '../../assets/img/' + this.object.images[i]
       });
     }
+  }
+
+  public reloadData() {
+      this.objectService.getObjectById(this.id).subscribe((data: Obj) => {
+          if (data) {
+              this.object = data;
+              this.titleService.setTitle(this.object.ceo_title);
+              this.meta.addTags([
+                  {name: 'description', content: this.object.ceo_desc},
+                  {name: 'keywords', content: this.object.ceo_keys}]);
+              this.getGalleryOptions();
+          }
+      });
   }
 }

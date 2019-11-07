@@ -12,7 +12,7 @@ import {Requestt} from '../../models/requestt.model';
 })
 export class SliderComponent implements OnInit {
 
-  slides: Slide[];
+  slides: Slide;
   form = new FormGroup({
     name: new FormControl(null, [Validators.required]),
     question: new FormControl(null, [Validators.required]),
@@ -26,7 +26,7 @@ export class SliderComponent implements OnInit {
               private requestService: RequestService) { }
 
   ngOnInit() {
-    this.slideService.getSlides().subscribe((data: Slide []) => {
+    this.slideService.getSlides().subscribe((data: Slide) => {
       if (data) {
         this.slides = data;
       }
