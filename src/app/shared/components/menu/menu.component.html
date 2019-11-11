@@ -34,8 +34,8 @@
         <mat-select-trigger>
           <span class="menu__lang-icon menu__lang-icon-{{ selectedLanguage | lowercase}}"> </span>
         </mat-select-trigger>
-        <mat-option *ngFor="let lang of languages" [value]="lang" class="menu__option">
-          <span class="menu__lang-img menu__lang-img-{{lang | lowercase}}"></span>
+        <mat-option *ngFor="let lang of languages" [value]="lang.code" class="menu__option">
+          <span class="menu__lang-img menu__lang-img-{{lang.code | lowercase}}"></span>
         </mat-option>
       </mat-select>
     </mat-form-field>
@@ -76,8 +76,8 @@
           <mat-select-trigger>
             <span class="menu__lang-icon menu__lang-icon-{{ selectedLanguage | lowercase}}"> </span>
           </mat-select-trigger>
-          <mat-option *ngFor="let lang of languages" [value]="lang" class="menu__option">
-            <span class="menu__lang-img menu__lang-img-{{lang | lowercase}}"></span>
+          <mat-option *ngFor="let lang of languages" [value]="lang.code" class="menu__option">
+            <span class="menu__lang-img menu__lang-img-{{lang.code | lowercase}}"></span>
           </mat-option>
         </mat-select>
       </mat-form-field>
@@ -90,8 +90,8 @@
         <mat-select-trigger>
           <span class="menu__lang-icon menu__lang-icon-{{ selectedLanguage | lowercase}}"> </span>
         </mat-select-trigger>
-        <mat-option *ngFor="let lang of languages" [value]="lang" class="menu__option">
-          <span class="menu__lang-img menu__lang-img-{{lang | lowercase}}"></span>
+        <mat-option *ngFor="let lang of languages" [value]="lang.code" class="menu__option">
+          <span class="menu__lang-img menu__lang-img-{{lang.code | lowercase}}"></span>
         </mat-option>
       </mat-select>
     </mat-form-field>

@@ -41,6 +41,9 @@ export class ServicesComponent implements OnInit {
       this.serviceService.getServices().subscribe((data: Service[]) => {
           if (data) {
               this.services = data;
+              if (this.services[0].language_services.length === 0) {
+                  this.languageService.setDefaultLang();
+              }
           }
       });
       this.serviceService.getServicesPage().subscribe((data: Servicepage) => {

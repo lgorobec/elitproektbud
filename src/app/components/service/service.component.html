@@ -1,10 +1,10 @@
 <div class="service" id="servOne">
   <div class="service__i">
-    <h3 class="service__title">{{ service.name }}</h3>
+    <h3 class="service__title">{{ service.language_services[0].name }}</h3>
     <hr class="service__hr">
     <div class="service__description">
-      <img [src]="'../../assets/img/' + service.img" alt="{{ service.ceo_alt }}" class="service__img">
-      <p class="service__text">{{ service.text }}</p>
+      <img [src]="service.img" alt="{{ service.language_services[0].alt }}" class="service__img">
+      <p class="service__text">{{ service.language_services[0].text }}</p>
       <div style="clear: both;"></div>
     </div>
   </div>
