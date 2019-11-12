@@ -48,9 +48,8 @@ export class ServicesListComponent implements OnInit {
       this.serviceService.getServices().subscribe((data: Service []) => {
           if (data) {
               this.services = data;
-              if (data[0].language_services.length === 0) {
-                this.languageService.setDefaultLang();
-              }
+          } else {
+              this.languageService.setDefaultLang();
           }
       });
   }

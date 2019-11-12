@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from '@angular/common/http';
-import {BaseApi} from '../base-api/base-api';
-import {Observable} from 'rxjs';
-import {About} from '../models/about.model';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+
+import { BaseApi } from '../base-api/base-api';
+import { About } from '../models/about.model';
 
 @Injectable()
 export class AboutService extends BaseApi {

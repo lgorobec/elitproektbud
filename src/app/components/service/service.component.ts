@@ -14,7 +14,7 @@ import {LanguageService} from '../../shared/services/language.service';
 export class ServiceComponent implements OnInit {
 
   id = 0;
-  service = new Service('', '', '', '', '', []);
+  service = new Service('', '', '', '', '', '', '', '', '', '');
 
   constructor(public activatedRoute: ActivatedRoute,
               public serviceService: ServiceService,
@@ -46,11 +46,10 @@ export class ServiceComponent implements OnInit {
       this.serviceService.getServiceById(this.id).subscribe((data: Service) => {
           if (data) {
               this.service = data;
-              console.log(data);
-              // this.titleService.setTitle(this.service.ceo_title);
-              // this.meta.addTags([
-              //     {name: 'description', content: this.service.ceo_desc},
-              //     {name: 'keywords', content: this.service.ceo_keys}]);
+              // this.titleService.setTitle(this.service.title);
+              this.meta.addTags([
+                  {name: 'description', content: this.service.description},
+                  {name: 'keywords', content: this.service.keywords}]);
           }
       });
   }

@@ -41,18 +41,17 @@ export class ServicesComponent implements OnInit {
       this.serviceService.getServices().subscribe((data: Service[]) => {
           if (data) {
               this.services = data;
-              if (this.services[0].language_services.length === 0) {
-                  this.languageService.setDefaultLang();
-              }
+          } else {
+              this.languageService.setDefaultLang();
           }
       });
       this.serviceService.getServicesPage().subscribe((data: Servicepage) => {
           if (data) {
               this.ser_ceo = data;
-              this.titleService.setTitle(this.ser_ceo.ceo_title);
+              // this.titleService.setTitle(this.ser_ceo.ceo_title);
               this.meta.addTags([
-                  {name: 'description', content: this.ser_ceo.ceo_desc},
-                  {name: 'keywords', content: this.ser_ceo.ceo_keys}]);
+                  {name: 'description', content: this.ser_ceo.description},
+                  {name: 'keywords', content: this.ser_ceo.keywords}]);
           }
       });
   }

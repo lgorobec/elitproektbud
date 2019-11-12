@@ -25,7 +25,7 @@ export class ServiceService extends BaseApi {
   }
 
   getServicesPage(): Observable <Servicepage> {
-    return this.get('servicespage')
+    return this.get(`services/${this.languageService.selectLang.value}/seo`)
         .map((ser: Servicepage[]) => ser[0] ? ser[0] : undefined);
   }
 }
