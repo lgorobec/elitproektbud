@@ -49,10 +49,10 @@ export class ServicesComponent implements OnInit {
           this.serviceService.getServicesPage().subscribe((data: Servicepage) => {
               if (data) {
                   this.ser_ceo = data;
-                  // this.titleService.setTitle(this.ser_ceo.ceo_title);
+                  this.titleService.setTitle(this.ser_ceo.service_title);
                   this.meta.addTags([
-                      {name: 'description', content: this.ser_ceo.description},
-                      {name: 'keywords', content: this.ser_ceo.keywords}]);
+                      {name: 'description', content: this.ser_ceo.service_description},
+                      {name: 'keywords', content: this.ser_ceo.service_keywords}]);
               }
           });
       }
