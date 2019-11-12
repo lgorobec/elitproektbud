@@ -1,11 +1,11 @@
 export class Contact {
   constructor(
-    public adress: string,
-    public phone: string,
-    public email: string,
-    public ceo_title: string,
-    public ceo_keys: string,
-    public ceo_desc: string,
+    public contacts_phone: string,
+    public contacts_email: string,
+    public contacts_address: string,
+    public contacts_title: string,
+    public contacts_description: string,
+    public contacts_keywords: string,
     public id?: number
   ) { }
 }
