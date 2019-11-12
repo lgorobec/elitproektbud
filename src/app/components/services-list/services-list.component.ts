@@ -45,12 +45,14 @@ export class ServicesListComponent implements OnInit {
   }
 
   public reloadData() {
-      this.serviceService.getServices().subscribe((data: Service []) => {
-          if (data) {
-              this.services = data;
-          } else {
-              this.languageService.setDefaultLang();
-          }
-      });
+    if (this.languageService.selectLang.value) {
+        this.serviceService.getServices().subscribe((data: Service []) => {
+            if (data) {
+                this.services = data;
+            } else {
+                this.languageService.setDefaultLang();
+            }
+        });
+    }
   }
 }

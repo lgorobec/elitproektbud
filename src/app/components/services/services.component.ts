@@ -38,21 +38,23 @@ export class ServicesComponent implements OnInit {
   }
 
   public reloadData() {
-      this.serviceService.getServices().subscribe((data: Service[]) => {
-          if (data) {
-              this.services = data;
-          } else {
-              this.languageService.setDefaultLang();
-          }
-      });
-      this.serviceService.getServicesPage().subscribe((data: Servicepage) => {
-          if (data) {
-              this.ser_ceo = data;
-              // this.titleService.setTitle(this.ser_ceo.ceo_title);
-              this.meta.addTags([
-                  {name: 'description', content: this.ser_ceo.description},
-                  {name: 'keywords', content: this.ser_ceo.keywords}]);
-          }
-      });
+      if (this.languageService.selectLang.value) {
+          this.serviceService.getServices().subscribe((data: Service[]) => {
+              if (data) {
+                  this.services = data;
+              } else {
+                  this.languageService.setDefaultLang();
+              }
+          });
+          this.serviceService.getServicesPage().subscribe((data: Servicepage) => {
+              if (data) {
+                  this.ser_ceo = data;
+                  // this.titleService.setTitle(this.ser_ceo.ceo_title);
+                  this.meta.addTags([
+                      {name: 'description', content: this.ser_ceo.description},
+                      {name: 'keywords', content: this.ser_ceo.keywords}]);
+              }
+          });
+      }
   }
 }
