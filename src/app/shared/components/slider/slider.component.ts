@@ -20,7 +20,7 @@ export class SliderComponent implements OnInit {
   });
   name: string;
   phone: string;
-  question: string;
+  text: string;
 
   constructor(private slideService: SlideService,
               private requestService: RequestService) { }
@@ -36,10 +36,11 @@ export class SliderComponent implements OnInit {
   submitForm() {
     const req = new Requestt(this.form.value.name, this.form.value.phone, this.form.value.question);
     this.requestService.addRequest(req).subscribe((data: Requestt) => {
+      console.log(data);
       if (data) {
         this.name = '';
         this.phone = '';
-        this.question = '';
+        this.text = '';
       }
     });
   }

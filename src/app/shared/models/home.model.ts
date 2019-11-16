@@ -1,9 +1,9 @@
 export class Home {
   constructor(
-    public text: string,
-    public ceo_title: string,
-    public ceo_keys: string,
-    public ceo_desc: string,
+    public home_title: string,
+    public home_description: string,
+    public home_keywords: string,
+    public home_alt: string,
     public id?: number
   ) { }
 }

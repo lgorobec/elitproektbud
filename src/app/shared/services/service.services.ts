@@ -20,7 +20,7 @@ export class ServiceService extends BaseApi {
   }
 
   getServiceById(id: number): Observable <Service> {
-    return this.get(`services?id=${id}`)
+    return this.get(`services/${this.languageService.selectLang.value}/show/${id}`)
         .map((ser: Service[]) => ser[0] ? ser[0] : undefined);
   }
 

@@ -15,11 +15,12 @@ export class PartnerService extends BaseApi {
   }
 
   getPartners(): Observable <Partner[]> {
-    return this.get(`partners/${this.languageService.selectLang.value}`);
+    return this.get(`partners/${this.languageService.selectLang.value}`)
+        .map((part: Partner[][]) => part[0] ? part[0] : undefined);
   }
 
   getPartnersPage(): Observable <Partnerpage> {
-    return this.get('partnerspage')
+    return this.get(`partners/${this.languageService.selectLang.value}/seo`)
         .map((partner: Partnerpage[]) => partner[0] ? partner[0] : undefined);
   }
 }

@@ -14,7 +14,7 @@ import {LanguageService} from '../../shared/services/language.service';
 export class ServiceComponent implements OnInit {
 
   id = 0;
-  service = new Service('', '', '', '', '', '', '', '', '', '');
+  service = new Service('', '', '', '', '', '', '', '', '', '', '');
 
   constructor(public activatedRoute: ActivatedRoute,
               public serviceService: ServiceService,
@@ -26,7 +26,7 @@ export class ServiceComponent implements OnInit {
 
   ngOnInit() {
     this.activatedRoute.paramMap.subscribe(params => {
-      this.id = parseInt(params.get('id'), 10);
+      this.id = +params.get('id');
       this.reloadData();
     });
     this.triggerScrollTo();
@@ -43,14 +43,17 @@ export class ServiceComponent implements OnInit {
   }
 
   public reloadData() {
-      this.serviceService.getServiceById(this.id).subscribe((data: Service) => {
-          if (data) {
-              this.service = data;
-              // this.titleService.setTitle(this.service.title);
-              this.meta.addTags([
-                  {name: 'description', content: this.service.description},
-                  {name: 'keywords', content: this.service.keywords}]);
-          }
-      });
+      if (this.languageService.selectLang.value) {
+          this.serviceService.getServiceById(this.id).subscribe((data: Service) => {
+              console.log(data);
+              if (data) {
+                  this.service = data;
+                  this.titleService.setTitle(this.service.title);
+                  this.meta.addTags([
+                      {name: 'description', content: this.service.description},
+                      {name: 'keywords', content: this.service.keywords}]);
+              }
+          });
+      }
   }
 }

@@ -1,12 +1,13 @@
 export class Obj {
   constructor(
-    public main_img: string,
+    public alt: string,
+    public code: string,
+    public description: string,
+    public images: string,
+    public img_main: string,
+    public keywords: string,
     public name: string,
-    public images = [],
-    public ceo_title: string,
-    public ceo_keys: string,
-    public ceo_desc: string,
-    public ceo_alt_main: string,
+    public title: string,
     public id?: number
   ) { }
 }

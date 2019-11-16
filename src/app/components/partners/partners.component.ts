@@ -14,7 +14,7 @@ import {LanguageService} from '../../shared/services/language.service';
 export class PartnersComponent implements OnInit {
 
   partners: Partner[];
-  pageCeo = new Partnerpage('', '', '');
+  pageCeo = new Partnerpage('', '', '', '');
 
   constructor(public partnersService: PartnerService,
               public meta: Meta,
@@ -47,10 +47,10 @@ export class PartnersComponent implements OnInit {
           this.partnersService.getPartnersPage().subscribe((data: Partnerpage) => {
               if (data) {
                   this.pageCeo = data;
-                  this.titleService.setTitle(this.pageCeo.ceo_title);
+                  this.titleService.setTitle(this.pageCeo.partner_title);
                   this.meta.addTags([
-                      {name: 'description', content: this.pageCeo.ceo_desc},
-                      {name: 'keywords', content: this.pageCeo.ceo_keys}]);
+                      {name: 'description', content: this.pageCeo.partner_description},
+                      {name: 'keywords', content: this.pageCeo.partner_keywords}]);
               }
           });
       }

@@ -10,6 +10,7 @@ export class Service {
     public keywords: string,
     public alt: string,
     public code: string,
+    public title: string,
     public id?: number
   ) { }
 }

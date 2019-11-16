@@ -1,8 +1,9 @@
 export class Partnerpage {
-  constructor(
-    public ceo_title: string,
-    public ceo_keys: string,
-    public ceo_desc: string,
-    public id?: number
-  ) { }
+    constructor(
+        public partner_title: string,
+        public partner_description: string,
+        public partner_keywords: string,
+        public partner_alt: string,
+        public id?: number
+    ) { }
 }
