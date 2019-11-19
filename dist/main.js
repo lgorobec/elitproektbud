@@ -1773,7 +1773,7 @@ var BaseApi = /** @class */ (function () {
     function BaseApi(http) {
         this.http = http;
         // private baseUrl = 'http://localhost:3330/';
-        this.baseUrl = 'http://building.loc/api/';
+        this.baseUrl = 'https://building-company.herokuapp.com/api/';
     }
     BaseApi.prototype.getUrl = function (url) {
         if (url === void 0) { url = ''; }
