@@ -36,14 +36,16 @@ export class ContactsComponent implements OnInit {
   }
 
   public reloadData() {
-      this.contactsService.getContacts().subscribe((data: Contact) => {
-          if (data) {
-              this.contacts = data;
-              this.titleService.setTitle(this.contacts.ceo_title);
-              this.meta.addTags([
-                  {name: 'description', content: this.contacts.ceo_desc},
-                  {name: 'keywords', content: this.contacts.ceo_keys}]);
-          }
-      });
+      if (this.languageServices.selectLang.value) {
+          this.contactsService.getContacts().subscribe((data: Contact) => {
+              if (data) {
+                  this.contacts = data;
+                  this.titleService.setTitle(this.contacts.contacts_title);
+                  this.meta.addTags([
+                      {name: 'description', content: this.contacts.contacts_description},
+                      {name: 'keywords', content: this.contacts.contacts_keywords}]);
+              }
+          });
+      }
   }
 }

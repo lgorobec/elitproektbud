@@ -1,9 +1,9 @@
 export class Partner {
   constructor(
+    public img: string,
     public link: string,
     public name: string,
-    public img: string,
-    public ceo_alt: string,
+    public code: string,
     public id?: number
   ) { }
 }

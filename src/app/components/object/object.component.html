@@ -2,7 +2,7 @@
   <div class="object__i">
     <h3 class="object__title">{{ object.name }}</h3>
     <hr class="object__hr">
-    <div class="object__gallery" *ngIf="object.images.length != 0">
+    <div class="object__gallery" *ngIf="galleryImages">
       <ngx-gallery [options]="galleryOptions" [images]="galleryImages"></ngx-gallery>
     </div>
   </div>

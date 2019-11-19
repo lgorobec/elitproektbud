@@ -1,7 +1,8 @@
 export class Servicepage {
   constructor(
-    public description: string,
-    public keywords: string,
-    public alt: string,
+    public service_title: string,
+    public service_description: string,
+    public service_keywords: string,
+    public service_alt: string,
   ) { }
 }

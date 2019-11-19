@@ -17,7 +17,8 @@ export class ObjectComponent implements OnInit {
   galleryOptions: NgxGalleryOptions[];
   id: number;
   galleryImages: NgxGalleryImage[];
-  object = new Obj('', '', [], '', '', '', '');
+  images = [];
+  object = new Obj('', '', '', '', '', '', '', '');
 
   constructor(public activatedRoute: ActivatedRoute,
               public objectService: ObjectService,
@@ -29,7 +30,7 @@ export class ObjectComponent implements OnInit {
   ngOnInit() {
     this.triggerScrollTo();
     this.activatedRoute.paramMap.subscribe(params => {
-      this.id = parseInt(params.get('id'), 10);
+      this.id = +params.get('id');
       this.reloadData();
     });
     this.languageService.selectLang.subscribe((lang) => {
@@ -45,6 +46,14 @@ export class ObjectComponent implements OnInit {
   }
 
   public getGalleryOptions() {
+      this.galleryImages = [];
+      for (let i = 0; i < this.images.length; i++) {
+          this.galleryImages.push({
+              small: this.images[i],
+              medium: this.images[i],
+              big: this.images[i]
+          });
+      }
     this.galleryOptions = [
       {
         width: '800px',
@@ -66,26 +75,21 @@ export class ObjectComponent implements OnInit {
         preview: false
       }
     ];
-    this.galleryImages = [];
-    for (let i = 0; i < this.object.images.length; i++) {
-      this.galleryImages.push({
-        small: '../../assets/img/' + this.object.images[i],
-        medium: '../../assets/img/' + this.object.images[i],
-        big: '../../assets/img/' + this.object.images[i]
-      });
-    }
   }
 
   public reloadData() {
-      this.objectService.getObjectById(this.id).subscribe((data: Obj) => {
-          if (data) {
-              this.object = data;
-              this.titleService.setTitle(this.object.ceo_title);
-              this.meta.addTags([
-                  {name: 'description', content: this.object.ceo_desc},
-                  {name: 'keywords', content: this.object.ceo_keys}]);
-              this.getGalleryOptions();
-          }
-      });
+    if (this.languageService.selectLang.value) {
+        this.objectService.getObjectById(this.id).subscribe((data: Obj) => {
+            if (data) {
+                this.object = data;
+                this.images = this.object.images.split(';');
+                this.titleService.setTitle(this.object.title);
+                this.meta.addTags([
+                    {name: 'description', content: this.object.description},
+                    {name: 'keywords', content: this.object.keywords}]);
+                this.getGalleryOptions();
+            }
+        });
+    }
   }
 }

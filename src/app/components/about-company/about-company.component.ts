@@ -36,12 +36,14 @@ export class AboutCompanyComponent implements OnInit {
   }
 
   public reloadData() {
-      this.aboutService.getAbout().subscribe((data: About) => {
-          this.about = data;
-          this.titleService.setTitle(this.about.ceo_title);
-          this.meta.addTags([
-              {name: 'description', content: this.about.ceo_desc},
-              {name: 'keywords', content: this.about.ceo_keys}]);
-      });
+      if (this.languageService.selectLang.value) {
+          this.aboutService.getAbout().subscribe((data: About) => {
+              this.about = data;
+              this.titleService.setTitle(this.about.about_title);
+              this.meta.addTags([
+                  {name: 'description', content: this.about.about_description},
+                  {name: 'keywords', content: this.about.about_keywords}]);
+          });
+      }
   }
 }

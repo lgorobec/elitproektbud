@@ -9,15 +9,15 @@
       <div class="contacts__inner">
         <div class="contacts__group">
           <h5 class="contacts__name">{{ "contacts.adress" | translate }}</h5>
-          <p class="contacts__text">{{ contacts.adress }}</p>
+          <p class="contacts__text">{{ contacts.contacts_address }}</p>
         </div>
         <div class="contacts__group">
           <h5 class="contacts__name">{{ "contacts.phone" | translate }}</h5>
-          <p class="contacts__text">{{ contacts.phone }}</p>
+          <p class="contacts__text">{{ contacts.contacts_phone }}</p>
         </div>
         <div class="contacts__group contacts__group_last">
           <h5 class="contacts__name">{{ "contacts.email" | translate }}</h5>
-          <a href="mailto:{{ contacts.email }}" target="_blank" class="contacts__link">{{ contacts.email }}</a>
+          <a href="mailto:{{ contacts.contacts_email }}" target="_blank" class="contacts__link">{{ contacts.contacts_email }}</a>
         </div>
       </div>
     </div>

@@ -5,7 +5,7 @@
     <div class="partners__list">
       <div class="partners__item" *ngFor="let part of partners">
         <a href="{{ part.link }}" class="partners__link">
-          <img [src]="'../../assets/img/' + part.img" alt="{{ part.ceo_alt_main }}" class="partners__img">
+          <img [src]="part.img" alt="" class="partners__img">
           <p class="partners__name">{{ part.name }}</p>
         </a>
       </div>

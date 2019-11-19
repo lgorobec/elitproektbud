@@ -1,8 +1,8 @@
 export class Requestt {
   constructor(
     public name: string,
-    public phoneNumber: string,
-    public question: string,
+    public phone: string,
+    public text: string,
     public id?: number
   ) { }
 }
