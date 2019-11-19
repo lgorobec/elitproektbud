@@ -5,7 +5,7 @@ import {Observable} from 'rxjs';
 @Injectable()
 export class BaseApi {
   // private baseUrl = 'http://localhost:3330/';
-  private baseUrl = 'https://building-company.herokuapp.com';
+  private baseUrl = 'https://building-company.herokuapp.com/api/';
   // private token = document.querySelector('meta[name=csrf-token]').getAttribute('content');
 
   constructor(public http: HttpClient) {}
