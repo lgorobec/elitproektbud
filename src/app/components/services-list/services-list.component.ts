@@ -13,8 +13,9 @@ export class ServicesListComponent implements OnInit {
 
   @ViewChild('owlCarousel', {static: false}) owlCarousel: OwlCarousel;
   services: Service[];
-  options = {items: 4, dots: false, nav: true};
   width = document.body.clientWidth;
+  sliderItemsNumber = 4;
+  options = {items: this.sliderItemsNumber, dots: false, nav: true};
 
   constructor(public serviceService: ServiceService,
               public languageService: LanguageService) { }
@@ -28,19 +29,23 @@ export class ServicesListComponent implements OnInit {
   }
 
   mouseWheel(e) {
-    if (e.deltaY > 0) {
-      this.owlCarousel.previous([500]);
-    } else {
-      this.owlCarousel.next([500]);
+    if (this.sliderItemsNumber < this.services.length) {
+        if (e.deltaY > 0) {
+            this.owlCarousel.previous([500]);
+        } else {
+            this.owlCarousel.next([500]);
+        }
+        e.preventDefault();
     }
-    e.preventDefault();
   }
 
   getOptions() {
     if (this.width <= 767) {
-      this.options = {items: 1, dots: false, nav: true};
+      this.sliderItemsNumber = 1;
+      this.options = {items: this.sliderItemsNumber, dots: false, nav: true};
     } else if (this.width <= 991) {
-      this.options = {items: 3, dots: false, nav: true};
+      this.sliderItemsNumber = 3;
+      this.options = {items: this.sliderItemsNumber, dots: false, nav: true};
     }
   }
 
@@ -48,6 +53,7 @@ export class ServicesListComponent implements OnInit {
     if (this.languageService.selectLang.value) {
         this.serviceService.getServices().subscribe((data: Service []) => {
             if (data) {
+                console.log(data);
                 this.services = data;
             } else {
                 this.languageService.setDefaultLang();
