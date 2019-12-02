@@ -1,0 +1,35 @@
+{
+  "menu": {
+    "home": "Головна",
+    "about": "Про компанiю",
+    "services": "Послуги",
+    "licences": "Лiцензiя",
+    "partners": "Партнери",
+    "objects": "Об'єкти",
+    "contacts": "Контакти"
+  },
+  "slider_text": "Текст-девiз компанiї",
+  "request": {
+    "name": "Ваше ім'я",
+    "phone": "Ваш номер",
+    "text": "Замовити дзвiнок:",
+    "button": "Вiдправити",
+    "question": "Питання, що цiкавить"
+  },
+  "home": {
+    "welcome": "Ласкаво просимо!"
+  },
+  "services_all": "Усi послуги",
+  "clients_title": "Наши клiєнти",
+  "about_title": "Про компанiю",
+  "services_title": "Послуги",
+  "licences_title": "Лiцензiя",
+  "partners__title": "Партнери",
+  "objects__title": "Об'єкти",
+  "contacts": {
+    "title": "Контакти",
+    "adress": "Адреса",
+    "phone": "Телефон",
+    "email": "E-mail"
+  }
+}
