@@ -8,6 +8,7 @@ export class BaseApi {
   private baseUrl = 'http://api.elitproektbud.com.ua';
   // private token = document.querySelector('meta[name=csrf-token]').getAttribute('content');
 
+
   constructor(public http: HttpClient) {}
 
   private getUrl(url: string = ''): string {
