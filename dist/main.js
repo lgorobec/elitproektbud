@@ -97,7 +97,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"objects\" id=\"Objects\">\n  <div class=\"objects__i\">\n    <h3 class=\"objects__title\">{{ \"objects__title\" | translate }}</h3>\n    <hr class=\"objects__hr\">\n    <div class=\"objects__list\">\n      <div class=\"objects__item\" *ngFor=\"let obj of objects, let x = index\">\n        <a [routerLink]=\"'/object/' + obj.id\" class=\"objects__link\">\n          <img style=\"float: left\" [src]=\"'../../assets/img/' + obj.img_main\" alt=\"{{ obj.alt }}\" class=\"objects__img\">\n          <h5 class=\"objects__name\">{{ obj.name }}</h5>\n          <div style=\"clear: both;\"></div>\n        </a>\n      </div>\n    </div>\n  </div>\n</div>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"objects\" id=\"Objects\">\n  <div class=\"objects__i\">\n    <h3 class=\"objects__title\">{{ \"objects__title\" | translate }}</h3>\n    <hr class=\"objects__hr\">\n    <div class=\"objects__list\">\n      <div class=\"objects__item\" *ngFor=\"let obj of objects, let x = index\">\n        <a [routerLink]=\"'/object/' + obj.id\" class=\"objects__link\">\n          <img style=\"float: left\" [src]=\"obj.img_main\" alt=\"{{ obj.alt }}\" class=\"objects__img\">\n          <h5 class=\"objects__name\">{{ obj.name }}</h5>\n          <div style=\"clear: both;\"></div>\n        </a>\n      </div>\n    </div>\n  </div>\n</div>\n");
 
 /***/ }),
 

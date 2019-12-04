@@ -5,7 +5,7 @@
     <div class="objects__list">
       <div class="objects__item" *ngFor="let obj of objects, let x = index">
         <a [routerLink]="'/object/' + obj.id" class="objects__link">
-          <img style="float: left" [src]="'../../assets/img/' + obj.img_main" alt="{{ obj.alt }}" class="objects__img">
+          <img style="float: left" [src]="obj.img_main" alt="{{ obj.alt }}" class="objects__img">
           <h5 class="objects__name">{{ obj.name }}</h5>
           <div style="clear: both;"></div>
         </a>
