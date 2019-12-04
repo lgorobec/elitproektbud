@@ -17,7 +17,7 @@
       <p class="slider-carousel__text">
         {{ 'slider_text' | translate }}
       </p>
-      <form class="slider-carousel__form" (ngSubmit)="submitForm()" [formGroup]="form">n
+      <form class="slider-carousel__form" (ngSubmit)="submitForm()" [formGroup]="form">
         <h6 class="slider-carousel__title">{{ 'request.text' | translate }}</h6>
         <div class="slider-carousel__group">
           <input type="text" class="slider-carousel__input" placeholder="{{ 'request.name' | translate }}" formControlName="name" [ngModel]="name">
