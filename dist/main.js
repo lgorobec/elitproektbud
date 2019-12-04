@@ -1779,7 +1779,7 @@ var BaseApi = /** @class */ (function () {
     function BaseApi(http) {
         this.http = http;
         // private baseUrl = 'http://localhost:3330/';
-        this.baseUrl = 'http://api.elitproektbud.com.ua';
+        this.baseUrl = 'http://api.elitproektbud.com.ua/api/';
     }
     BaseApi.prototype.getUrl = function (url) {
         if (url === void 0) { url = ''; }
