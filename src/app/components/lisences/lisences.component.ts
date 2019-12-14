@@ -77,7 +77,7 @@ export class LisencesComponent implements OnInit {
       this.licenceService.getLicences().subscribe((data: Licence) => {
         if (data) {
           this.licence = data;
-          this.images = [this.licence.images.split(';')[0]];
+          this.images = this.licence.images.split(';');
           this.titleService.setTitle(this.licence.title);
           this.meta.addTags([
             {name: 'description', content: this.licence.description},
