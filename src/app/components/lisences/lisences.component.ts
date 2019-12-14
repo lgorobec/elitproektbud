@@ -40,50 +40,51 @@ export class LisencesComponent implements OnInit {
   }
 
   public getGalleryOptions() {
-    this.galleryOptions = [
-      {
-        width: '800px',
-        height: '600px',
-        thumbnailsColumns: 4,
-        imageAnimation: NgxGalleryAnimation.Slide
-      },
-      {
-        breakpoint: 800,
-        width: '100%',
-        height: '600px',
-        imagePercent: 80,
-        thumbnailsPercent: 20,
-        thumbnailsMargin: 20,
-        thumbnailMargin: 20
-      },
-      {
-        breakpoint: 400,
-        preview: false
-      }
-    ];
     this.galleryImages = [];
-    for (let i = 0; i < this.images.length; i++) {
+    for (const image of this.images) {
       this.galleryImages.push({
-        small: this.images[i],
-        medium: this.images[i],
-        big: this.images[i]
+        small: image,
+        medium: image,
+        big: image
       });
     }
+    this.galleryOptions = [
+      {
+          width: '800px',
+          height: '600px',
+          thumbnailsColumns: this.galleryImages.length > 1 ? 4 : 0,
+          imageAnimation: NgxGalleryAnimation.Slide,
+          thumbnails: this.galleryImages.length > 1 ? true : false
+      },
+      {
+          breakpoint: 800,
+          width: '100%',
+          height: '600px',
+          imagePercent: 80,
+          thumbnailsPercent: 20,
+          thumbnailsMargin: 20,
+          thumbnailMargin: 20
+      },
+      {
+          breakpoint: 400,
+          preview: false
+      }
+    ];
   }
 
   reloadData() {
-      if (this.languageService.selectLang.value) {
-          this.licenceService.getLicences().subscribe((data: Licence) => {
-              if (data) {
-                  this.licence = data;
-                  this.images = this.licence.images.split(';');
-                  this.titleService.setTitle(this.licence.title);
-                  this.meta.addTags([
-                      {name: 'description', content: this.licence.description},
-                      {name: 'keywords', content: this.licence.keywords}]);
-                  this.getGalleryOptions();
-              }
-          });
-      }
+    if (this.languageService.selectLang.value) {
+      this.licenceService.getLicences().subscribe((data: Licence) => {
+        if (data) {
+          this.licence = data;
+          this.images = [this.licence.images.split(';')[0]];
+          this.titleService.setTitle(this.licence.title);
+          this.meta.addTags([
+            {name: 'description', content: this.licence.description},
+            {name: 'keywords', content: this.licence.keywords}]);
+          this.getGalleryOptions();
+        }
+      });
+    }
   }
 }

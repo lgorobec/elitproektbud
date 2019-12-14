@@ -3,21 +3,31 @@
     <h3 class="contacts__title">{{ "contacts.title" | translate }}</h3>
     <hr class="contacts__hr">
     <div class="contacts__desc">
-      <div class="contacts__map">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d325518.68776786793!2d30.25251409688048!3d50.4016990539146!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4cf4ee15a4505%3A0x764931d2170146fe!2z0JrQuNC10LIsINCj0LrRgNCw0LjQvdCwLCAwMjAwMA!5e0!3m2!1sru!2sru!4v1571950368962!5m2!1sru!2sru" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
-      </div>
       <div class="contacts__inner">
-        <div class="contacts__group">
-          <h5 class="contacts__name">{{ "contacts.adress" | translate }}</h5>
-          <p class="contacts__text">{{ contacts.contacts_address }}</p>
+        <div class="contacts__phones">
+          <div class="contacts__group">
+            <h5 class="contacts__name">{{ "contacts.phone_first" | translate }}</h5>
+            <a href="" class="contacts__link">
+              <p class="contacts__text">+380503683721</p>
+            </a>
+          </div>
+          <div class="contacts__group">
+            <h5 class="contacts__name">{{ "contacts.phone_second" | translate }}</h5>
+            <a href="" class="contacts__link">
+              <p class="contacts__text">+380509477784</p>
+            </a>
+          </div>
+          <div class="contacts__group">
+            <h5 class="contacts__name">{{ "contacts.phone_third" | translate }}</h5>
+            <a href="" class="contacts__link">
+              <p class="contacts__text">+380953130662</p>
+            </a>
+          </div>
         </div>
-        <div class="contacts__group">
-          <h5 class="contacts__name">{{ "contacts.phone" | translate }}</h5>
-          <p class="contacts__text">{{ contacts.contacts_phone }}</p>
-        </div>
-        <div class="contacts__group contacts__group_last">
-          <h5 class="contacts__name">{{ "contacts.email" | translate }}</h5>
-          <a href="mailto:{{ contacts.contacts_email }}" target="_blank" class="contacts__link">{{ contacts.contacts_email }}</a>
+        <hr class="contacts__hr_small">
+        <div class="contacts__group contacts__group_address">
+          <h5 class="contacts__name">{{ "contacts.address" | translate }}</h5>
+          <p class="contacts__text">01004, Київ, вул. Басейна, будинок 5Б</p>
         </div>
       </div>
     </div>

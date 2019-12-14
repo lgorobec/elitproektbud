@@ -27,10 +27,10 @@
   "partners__title": "Партнери",
   "objects__title": "Об'єкти",
   "contacts": {
-    "title": "Контакти",
-    "adress": "Адреса",
-    "phone": "Телефон",
-    "email": "E-mail"
+    "address": "Юридична адреса",
+    "phone_first": "З питань будівництва та реконструкції",
+    "phone_second": "З питань оренди техніки",
+    "phone_third": "З питань ремонту приміщень"
   },
   "service_alef_name": "Оренда будівельної техніки"
 }

@@ -23,9 +23,7 @@ export class ContactsComponent implements OnInit {
   ngOnInit() {
     this.triggerScrollTo();
     this.reloadData();
-    this.languageServices.selectLang.subscribe((lang) => {
-      this.reloadData();
-    });
+    this.languageServices.selectLang.subscribe(() => this.reloadData());
   }
 
   public triggerScrollTo() {
@@ -36,16 +34,17 @@ export class ContactsComponent implements OnInit {
   }
 
   public reloadData() {
-      if (this.languageServices.selectLang.value) {
-          this.contactsService.getContacts().subscribe((data: Contact) => {
-              if (data) {
-                  this.contacts = data;
-                  this.titleService.setTitle(this.contacts.contacts_title);
-                  this.meta.addTags([
-                      {name: 'description', content: this.contacts.contacts_description},
-                      {name: 'keywords', content: this.contacts.contacts_keywords}]);
-              }
-          });
-      }
+    if (this.languageServices.selectLang.value) {
+      this.contactsService.getContacts().subscribe((data: Contact) => {
+        if (data) {
+          this.contacts = data;
+          this.titleService.setTitle(this.contacts.contacts_title);
+          this.meta.addTags([
+            { name: 'description', content: this.contacts.contacts_description },
+            { name: 'keywords', content: this.contacts.contacts_keywords }]
+          );
+        }
+      });
+    }
   }
 }

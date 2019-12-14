@@ -27,10 +27,10 @@
   "partners__title": "Partners",
   "objects__title": "Objects",
   "contacts": {
-    "title": "Contacts",
-    "adress": "Adress",
-    "phone": "Phone",
-    "email": "E-mail"
+    "address": "Legal address",
+    "phone_first": "On construction and reconstruction",
+    "phone_second": "On equipment rental",
+    "phone_third": "In questions of repair of the premises"
   },
   "service_alef_name": "Rental of construction equipment"
 }
