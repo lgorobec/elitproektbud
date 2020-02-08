@@ -12,12 +12,14 @@ export class LanguageService extends BaseApi {
   defaultLang: Language;
   languages = [];
 
-  constructor(public http: HttpClient,
-              public translate: TranslateService) {
+  constructor(
+      public http: HttpClient,
+      public translate: TranslateService,
+  ) {
     super(http);
   }
 
-  changeLanguage(lang: string) {
+  changeLanguage(lang: string): void {
     this.translate.addLangs(this.languages);
     this.translate.setDefaultLang(this.defaultLang.code);
     this.translate.use(lang);
@@ -30,11 +32,11 @@ export class LanguageService extends BaseApi {
         .map((data: Language[][]) => data[0] ? data[0] : undefined);
   }
 
-  setDefaultLang() {
-      this.translate.addLangs(this.languages);
-      this.translate.setDefaultLang(this.defaultLang.code);
-      this.translate.use(this.defaultLang.code);
-      this.selectLang.next(this.defaultLang.code);
-      localStorage.setItem('lang', this.defaultLang.code);
+  setDefaultLang(): void {
+    this.translate.addLangs(this.languages);
+    this.translate.setDefaultLang(this.defaultLang.code);
+    this.translate.use(this.defaultLang.code);
+    this.selectLang.next(this.defaultLang.code);
+    localStorage.setItem('lang', this.defaultLang.code);
   }
 }

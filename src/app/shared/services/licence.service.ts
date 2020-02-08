@@ -8,8 +8,10 @@ import {LanguageService} from './language.service';
 @Injectable()
 export class LicenceService extends BaseApi {
 
-  constructor(public http: HttpClient,
-              public languageServices: LanguageService) {
+  constructor(
+      public http: HttpClient,
+      public languageServices: LanguageService,
+  ) {
     super(http);
   }
 

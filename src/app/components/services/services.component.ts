@@ -1,60 +1,77 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import {Service} from '../../shared/models/service.model';
 import {ServiceService} from '../../shared/services/service.services';
 import {Servicepage} from '../../shared/models/servicepage.model';
 import {Meta, Title} from '@angular/platform-browser';
 import {ScrollToConfigOptions, ScrollToService} from '@nicky-lenaers/ngx-scroll-to';
 import {LanguageService} from '../../shared/services/language.service';
+import { Subject } from 'rxjs';
+import { first, takeUntil } from 'rxjs/operators';
 
 @Component({
   selector: 'app-services',
   templateUrl: './services.component.html',
   styleUrls: ['./services.component.less']
 })
-export class ServicesComponent implements OnInit {
+export class ServicesComponent implements OnInit, OnDestroy {
 
   services: Service[];
-  ser_ceo: Servicepage;
+  serCeo: Servicepage;
+  unsubscriber$ = new Subject<boolean>();
 
-  constructor(public serviceService: ServiceService,
-              public meta: Meta,
-              public titleService: Title,
-              public scrollToService: ScrollToService,
-              public languageService: LanguageService) { }
+  constructor(
+      public serviceService: ServiceService,
+      public meta: Meta,
+      public titleService: Title,
+      public scrollToService: ScrollToService,
+      public languageService: LanguageService,
+  ) {}
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.reloadData();
-    this.languageService.selectLang.subscribe((lang) => {
-      this.reloadData();
-    });
+    this.languageService.selectLang
+        .pipe(takeUntil(this.unsubscriber$))
+        .subscribe(() => this.reloadData());
     this.triggerScrollTo();
   }
 
-  public triggerScrollTo() {
-    const config: ScrollToConfigOptions = {
-      target: 'serv'
-    };
+  triggerScrollTo(): void {
+    const config: ScrollToConfigOptions = { target: 'serv' };
     this.scrollToService.scrollTo(config);
   }
 
-  public reloadData() {
-      if (this.languageService.selectLang.value) {
-          this.serviceService.getServices().subscribe((data: Service[]) => {
-              if (data) {
-                  this.services = data;
-              } else {
-                  this.languageService.setDefaultLang();
-              }
-          });
-          this.serviceService.getServicesPage().subscribe((data: Servicepage) => {
-              if (data) {
-                  this.ser_ceo = data;
-                  this.titleService.setTitle(this.ser_ceo.service_title);
-                  this.meta.addTags([
-                      {name: 'description', content: this.ser_ceo.service_description},
-                      {name: 'keywords', content: this.ser_ceo.service_keywords}]);
-              }
-          });
-      }
+  reloadData(): void {
+    if (this.languageService.selectLang.value) {
+      this.serviceService.getServices()
+          .pipe(
+            first(),
+            takeUntil(this.unsubscriber$),
+          ).subscribe((data: Service[]) => {
+            if (data) {
+              this.services = data;
+            } else {
+              this.languageService.setDefaultLang();
+            }
+      });
+      this.serviceService.getServicesPage()
+          .pipe(
+            first(),
+            takeUntil(this.unsubscriber$),
+          ).subscribe((data: Servicepage) => {
+            if (data) {
+              this.serCeo = data;
+              this.titleService.setTitle(this.serCeo.service_title);
+              this.meta.addTags([
+                  { name: 'description', content: this.serCeo.service_description },
+                  { name: 'keywords', content: this.serCeo.service_keywords },
+              ]);
+            }
+      });
+    }
+  }
+
+  ngOnDestroy(): void {
+    this.unsubscriber$.next(true);
+    this.unsubscriber$.unsubscribe();
   }
 }

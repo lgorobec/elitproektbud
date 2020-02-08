@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Client} from '../../models/client.model';
 import {ClientService} from '../../services/client.service';
+import {first} from 'rxjs/operators';
 
 @Component({
   selector: 'app-clients',
@@ -13,11 +14,13 @@ export class ClientsComponent implements OnInit {
 
   constructor(public clientService: ClientService) { }
 
-  ngOnInit() {
-    this.clientService.getClients().subscribe((data: Client) => {
-      if (data) {
-        this.clients = data;
-      }
+  ngOnInit(): void {
+    this.clientService.getClients()
+        .pipe(first())
+        .subscribe((data: Client) => {
+          if (data) {
+            this.clients = data;
+          }
     });
   }
 
